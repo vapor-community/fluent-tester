@@ -32,6 +32,10 @@ public final class Atom: Entity {
         ])
     }
 
+    public func compounds() throws -> Siblings<Compound> {
+        return try siblings()
+    }
+
     public static func prepare(_ database: Database) throws {
         try database.create(entity) { atoms in
             atoms.id()
